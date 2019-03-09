@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bultaco Owners Manuals</title>
+        <link rel="stylesheet" href="./libs/jquery.mobile-1.4.3.min.css">
+        <link rel="stylesheet" href="./libs/listview-grid.css">
+        <script src="./libs/jquery.js"></script>
+        <script src="./libs/jquery.mobile-1.4.3.min.js"></script>
+        <script type='text/javascript' src='./libs/knockout-3.5.0.js'></script>
+        <script type="text/javascript" src='./libs/manuals.js'></script>
+        <script type="text/javascript">
+            var myViewModel= { "manuals": ko.observableArray() };
+            $( document ).ready(function() {
+                myViewModel.manuals(engManuals);
+                ko.applyBindings(myViewModel);
+                $( ".photopopup" ).on({
+                    popupbeforeposition: function() {
+                        var maxHeight = $( window ).height() - 60 + "px";
+                        $( ".photopopup img" ).css( "max-height", maxHeight );
+                    }
+                });   
+            });
+            function go(img) {
+                document.getElementById("manualImage").src = "./images/" + img;
+                $( "#popManual" ).popup();                
+                $( "#popManual" ).popup({ positionTo: "window" });
+                //$( "#popManual" ).popup({ transition: "flip" });
+                $( "#popManual" ).popup("open");
+            }
+        </script>
+    </head>
+    <body>
+        <div data-role="page" id="main-page" class="my-page">
+            <div data-role="header" data-position="fixed"><h1>Bultaco Owners Manuals</h1></div>
+            <div role="main" class="ui-content">
+                <ul data-role="listview" data-filter="true" data-filter-placeholder="Filter manuals..." data-inset="true" data-theme="b" >
+                    <!-- ko foreach: manuals -->
+                        <li>
+                            <a data-bind="click: go(image)">
+                                <img data-bind="attr:{src:'./images/' + image}" class="ui-li-thumb">
+                                <h2 data-bind='text:name'></h2>
+                                <p>
+                                    <span data-bind='text:cc'></span><br>
+                                    <span data-bind='text:article'></span>
+                                </p>
+                                <p data-bind='text:model' class="ui-li-aside"></p>
+                            </a>
+                        </li>
+                    <!-- /ko -->
+                </ul>
+                <div data-role="popup" id="popManual" class="photopopup">
+                    <a href="#" data-bind="click:function(){$( '#popManual' ).popup( 'close' );}" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                    <img id="manualImage">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
