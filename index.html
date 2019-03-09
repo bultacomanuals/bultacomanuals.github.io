@@ -35,10 +35,10 @@
         <div data-role="page" id="main-page" class="my-page">
             <div data-role="header" data-position="fixed"><h1>Bultaco Owners Manuals</h1></div>
             <div role="main" class="ui-content">
-                <ul data-role="listview" data-filter="true" data-filter-placeholder="Filter manuals..." data-inset="true" data-theme="b" >
+                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter manuals...">
                     <!-- ko foreach: manuals -->
                         <li>
-                            <a data-bind="click: go(image)">
+                            <a data-bind="click: go(image)" data-theme="b">
                                 <img data-bind="attr:{src:'./images/' + image}" class="ui-li-thumb">
                                 <h2 data-bind='text:name'></h2>
                                 <p>
