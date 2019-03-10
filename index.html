@@ -48,6 +48,9 @@
                                 <p>
                                     <span data-bind='text:cc'></span><br>
                                     <span data-bind='text:article'></span>
+                                    <!-- ko if: $data.condition && $data.condition=="replace" -->
+                                    <br><span style="color:red">(replace)</span>
+                                    <!-- /ko -->
                                 </p>
                                 <p data-bind='text:model' class="ui-li-aside"></p>
                             </a>
