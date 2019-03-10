@@ -1,22 +1,16 @@
 /* A bit custom styling */
+.my-page .ui-listview li .ui-btn h2 {
+	color: #ffffff;
+}
 .my-page .ui-listview li .ui-btn p {
-	color: #000000;
+	color: #ffffff;
 }
 .my-page .ui-listview li .ui-btn .ui-li-aside {
-	color: #000000;
+	color: #ffffff;
 }
 
 /* First breakpoint is 48em (768px). 3 column layout. Tiles 250x250 pixels incl. margin at the breakpoint. */
 @media ( min-width: 48em ) {
-	.my-page .ui-listview li .ui-btn h2 {
-		color: #ffffff;
-	}
-	.my-page .ui-listview li .ui-btn p {
-		color: #ffffff;
-	}
-	.my-page .ui-listview li .ui-btn .ui-li-aside {
-		color: #ffffff;
-	}
 	.my-page .ui-content {
 		padding: .5625em; /* 9px */
 	}
