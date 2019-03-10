@@ -48,11 +48,13 @@
                                 <p>
                                     <span data-bind='text:cc'></span><br>
                                     <span data-bind='text:article'></span>
+                                </p>
+                                <p class="ui-li-aside">
+                                    <span data-bind='text:model'></span>
                                     <!-- ko if: $data.condition && $data.condition=="replace" -->
-                                    <br><span style="color:red">(replace)</span>
+                                    <span style="color:red">*</span>
                                     <!-- /ko -->
                                 </p>
-                                <p data-bind='text:model' class="ui-li-aside"></p>
                             </a>
                         </li>
                     <!-- /ko -->
