@@ -35,8 +35,10 @@
     <body>
         <div data-role="page" id="main-page" class="my-page" data-theme="b">
             <div data-role="header" data-position="fixed">
-                <h2>Bultaco Owners Manuals</h2>
-                <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+                <div class="ui-bar ui-bar-b" >
+                    <h1>Bultaco Manuales</h1>
+                    <a href="#nav-panel" data-icon="bars" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-bars ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button""></a>
+                </div>                
             </div>
             <div role="main" class="ui-content">
                 <ul id="manual_list" data-role="listview" data-inset="true" data-filter="true" data-input="#filterable-input">
@@ -46,8 +48,9 @@
                                 <img data-bind="attr:{src:'./images/' + image}" class="ui-li-thumb">
                                 <h2 data-bind='text:name'></h2>
                                 <p>
-                                    <span data-bind='text:cc'></span><br>
-                                    <span data-bind='text:article'></span>
+                                    <span data-bind='text:article'></span><br>
+                                    <span>cc: </span><span data-bind='text:cc'></span><br>
+                                    <span data-bind='text:edition'></span><span data-bind='text:", " + date'></span>
                                 </p>
                                 <p class="ui-li-aside">
                                     <span data-bind='text:model'></span>
@@ -65,9 +68,14 @@
                 <img id="manualImage">
             </div>
 
-            <div data-role="panel" data-display="push" id="nav-panel">
-                <h2>Filter</h2>
+            <div data-role="panel" data-display="overlay" data-position="right" id="nav-panel">
+                <h2>Buscar</h2>
                 <input type="text" data-type="search" id="filterable-input" data-theme="a">
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <center>
+                <img src=http://counters.honesty.com/cgi-bin/honesty-counter.cgi?df=gen.12131569.00001><br>
+                </center>                
             </div>
         </div>
     </body>
