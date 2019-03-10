@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Bultaco Owners Manuals</title>
-        <link rel="stylesheet" href="./libs/jquery.mobile-1.4.3.min.css">
+        <link rel="stylesheet" href="./libs/jquery.mobile-1.4.5.css">
         <link rel="stylesheet" href="./libs/listview-grid.css">
-        <script src="./libs/jquery.js"></script>
-        <script src="./libs/jquery.mobile-1.4.3.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="./libs/jquery.mobile-1.4.5.js"></script>
         <script type='text/javascript' src='./libs/knockout-3.5.0.js'></script>
         <script type="text/javascript" src='./libs/manuals.js'></script>
         <script type="text/javascript">
@@ -24,7 +24,8 @@
             });
             function go(img) {
                 document.getElementById("manualImage").src = "./images/" + img;
-                $( "#popManual" ).popup();                
+                $( "#popManual" ).popup();    
+                $( "#popManual" ).popup({ history: false });            
                 $( "#popManual" ).popup({ positionTo: "window" });
                 //$( "#popManual" ).popup({ transition: "flip" });
                 $( "#popManual" ).popup("open");
@@ -38,7 +39,7 @@
                 <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter manuals...">
                     <!-- ko foreach: manuals -->
                         <li>
-                            <a data-bind="click: go(image)" data-theme="b">
+                            <a data-bind="click: function(){go(image);}" data-theme="b">
                                 <img data-bind="attr:{src:'./images/' + image}" class="ui-li-thumb">
                                 <h2 data-bind='text:name'></h2>
                                 <p>
