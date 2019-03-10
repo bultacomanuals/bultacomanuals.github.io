@@ -29,7 +29,7 @@ var engManuals = [
 {"model":"27", "name":"Sherpa T", "cc":"250cc", "article":"27.30-027/I Primera Edicion Septiembre 1967", "image":"27.jpg"},
 {"model":"28", "name":"Campera", "cc":"175cc", "article":"28.30-027-1/I Segunda Edicion Octubre 1969", "image":"28.jpg"},
 {"model":"29/40/41", "name":"TSS", "cc":"350cc/125cc/250cc", "article":"29.30-027-/I Primera Edicion Julio 1969", "image":"29.jpg"},
-{"model":"30", "name":"Sherpa S", "cc":"100cc", "article":"30.30-027/I Primera Edicion Febrero 1970", "image":"30.jpg", "conditoin":"replace"},
+{"model":"30", "name":"Sherpa S", "cc":"100cc", "article":"30.30-027/I Primera Edicion Febrero 1970", "image":"30.jpg", "condition":"replace"},
 {"model":"33/39", "name":"Junior", "cc":"100cc/125cc", "article":"33.30-027/A/E Primera Edicion Octubre 1967", "image":"33.jpg"},
 {"model":"34", "name":"Senior", "cc":"175cc/200cc", "article":"34.30-027/E Segunda Edicion Octubre 1967", "image":"34.jpg", "condition":"replace"},
 {"model":"35", "name":"Mercurio", "cc":"200cc", "article":"35.30-027/I Primera Edicion Noviembre 1967", "image":"35.jpg"},
