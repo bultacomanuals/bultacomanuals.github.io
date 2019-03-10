@@ -33,13 +33,16 @@
         </script>
     </head>
     <body>
-        <div data-role="page" id="main-page" class="my-page">
-            <div data-role="header" data-position="fixed"><h1>Bultaco Owners Manuals</h1></div>
+        <div data-role="page" id="main-page" class="my-page" data-theme="b">
+            <div data-role="header" data-position="fixed">
+                <h2>Bultaco Owners Manuals</h2>
+                <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+            </div>
             <div role="main" class="ui-content">
-                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter manuals...">
+                <ul id="manual_list" data-role="listview" data-inset="true" data-filter="true" data-input="#filterable-input">
                     <!-- ko foreach: manuals -->
                         <li>
-                            <a data-bind="click: function(){go(image);}" data-theme="b">
+                            <a data-bind="click: function(){go(image);}" >
                                 <img data-bind="attr:{src:'./images/' + image}" class="ui-li-thumb">
                                 <h2 data-bind='text:name'></h2>
                                 <p>
@@ -51,10 +54,15 @@
                         </li>
                     <!-- /ko -->
                 </ul>
-                <div data-role="popup" id="popManual" class="photopopup">
-                    <a href="#" data-bind="click:function(){$( '#popManual' ).popup( 'close' );}" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-                    <img id="manualImage">
-                </div>
+            </div>
+            <div data-role="popup" id="popManual" class="photopopup">
+                <a href="#" data-bind="click:function(){$( '#popManual' ).popup( 'close' );}" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <img id="manualImage">
+            </div>
+
+            <div data-role="panel" data-display="push" id="nav-panel">
+                <h2>Filter</h2>
+                <input type="text" data-type="search" id="filterable-input" data-theme="a">
             </div>
         </div>
     </body>
