@@ -8,7 +8,13 @@
 .my-page .ui-listview li .ui-btn .ui-li-aside {
 	color: #ffffff;
 }
-
+.logo {
+	width:3em;
+	height:3em;
+}
+.my-title {
+	font-size: 1.25em;
+}
 /* First breakpoint is 48em (768px). 3 column layout. Tiles 250x250 pixels incl. margin at the breakpoint. */
 @media ( min-width: 48em ) {
 	.my-page .ui-content {
