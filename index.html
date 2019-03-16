@@ -22,13 +22,35 @@
                     }
                 });   
             });
-            function go(img) {
-                document.getElementById("manualImage").src = "./images/" + img;
+            var currentIndex;
+            function go(index) {
+                currentIndex = index;
+                document.getElementById("previous").style.display = "block";
+                document.getElementById("next").style.display = "block";
+                if (currentIndex==0) document.getElementById("previous").style.display = "none";
+                if (currentIndex==myViewModel.manuals().length-1) document.getElementById("next").style.display = "none";
+                document.getElementById("manualImage").src = "./images/" + myViewModel.manuals()[index].image;
                 $( "#popManual" ).popup();    
                 $( "#popManual" ).popup({ history: false });            
                 $( "#popManual" ).popup({ positionTo: "window" });
                 $( "#popManual" ).popup({ transition: "flip" });
                 $( "#popManual" ).popup("open");
+            }
+            function previous() {
+                if (currentIndex==0) return;
+                currentIndex--;
+                if (currentIndex==0) document.getElementById("previous").style.display = "none";
+                document.getElementById("next").style.display = "block";
+                document.getElementById("manualImage").src = "./images/" + myViewModel.manuals()[currentIndex].image;
+                $( "#popManual" ).popup("reposition", {"positionTo":"window"});
+            }
+            function next() {
+                if (currentIndex==myViewModel.manuals().length-1) return;
+                currentIndex++;
+                if (currentIndex==myViewModel.manuals().length-1) document.getElementById("next").style.display = "none";
+                document.getElementById("previous").style.display = "block";
+                document.getElementById("manualImage").src = "./images/" + myViewModel.manuals()[currentIndex].image;
+                $( "#popManual" ).popup("reposition", {"positionTo":"window"});
             }
         </script>
     </head>
@@ -45,7 +67,7 @@
                 <ul id="manual_list" data-role="listview" data-inset="true" data-filter="true" data-input="#filterable-input">
                     <!-- ko foreach: manuals -->
                         <li>
-                            <a data-bind="click: function(){go(image);}" >
+                            <a data-bind="click: function(){go($index());}" >
                                 <img data-bind="attr:{src:'./images/' + image}" class="ui-li-thumb">
                                 <h2 data-bind='text:name'></h2>
                                 <p>
@@ -67,8 +89,9 @@
             <div data-role="popup" id="popManual" class="photopopup">
                 <a href="#" data-bind="click:function(){$( '#popManual' ).popup( 'close' );}" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
                 <img id="manualImage">
+                <img id="previous" style="position:absolute; top:50%; width:3em; height:3em; opacity:.8;" onclick="javascript:previous();" src="./images/previous.png">
+                <img id="next" style="position:absolute; top:50%; right:0%; width:3em; height:3em; opacity:.8;" onclick="javascript:next();" src="./images/next.png">
             </div>
-
             <div data-role="panel" data-display="overlay" data-position="right" id="nav-panel">
                 <h2>Buscar</h2>
                 <input type="text" data-type="search" id="filterable-input" data-theme="a">
