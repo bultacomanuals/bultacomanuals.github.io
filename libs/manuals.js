@@ -35,7 +35,7 @@ var engManuals = [
 {"model":"35", "name":"Mercurio", "cc":"200", "article":"35.30-027/I", "edition":"Primera", "date":"Noviembre 1967", "image":"35.jpg"},
 {"model":"5T-35", "name":"El Tigre", "cc":"200", "article":"5T-35.30-027", "edition":"Primera", "date":"Enero 1969", "image":"35-5T.jpg"},
 {"model":"36", "name":"Campera", "cc":"175", "article":"36.30-027/E", "edition":"Primera", "date":"Marzo 1967", "image":"36.jpg"},
-{"model":"38", "name":"Libito AK", "cc":"100", "article":"38.30-027-A/I", "edition":"Primera", "date":"Febreo 1967", "image":"38.jpg"},
+{"model":"38", "name":"Lobito AK", "cc":"100", "article":"38.30-027-A/I", "edition":"Primera", "date":"Febreo 1967", "image":"38.jpg"},
 {"model":"40/41", "name":"TSS", "cc":"125/250", "article":"41.30-027/I", "edition":"Primera", "date":"Septiembre 1967", "image":"40.jpg"},
 {"model":"42", "name":"Pursang MK2", "cc":"250", "article":"42.30-027/I", "edition":"Primera", "date":"Mayo 1967", "image":"42.jpg"},
 {"model":"43/44/45", "name":"Sherpa S", "cc":"125/175/200", "article":"43.30-027-1/I", "edition":"Segundo", "date":"Enero 1969", "image":"43.jpg"},
