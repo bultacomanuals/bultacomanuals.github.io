@@ -3,17 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bultaco Manuales</title>
+        <title>Bultaco Calendars</title>
         <link rel="stylesheet" href="./libs/jquery.mobile-1.4.5.min.css">
         <link rel="stylesheet" href="./libs/listview-grid.css">
         <script src="./libs/jquery-latest.min.js"></script>
         <script src="./libs/jquery.mobile-1.4.5.min.js"></script>
         <script type='text/javascript' src='./libs/knockout-3.5.0.js'></script>
-        <script type="text/javascript" src='./libs/manuals.js'></script>
+        <script type="text/javascript" src='./libs/calendars.js'></script>
         <script type="text/javascript">
-            var myViewModel= { "manuals": ko.observableArray() };
+            var myViewModel= { "calendars": ko.observableArray() };
             $( document ).ready(function() {
-                myViewModel.manuals(engManuals);
+                myViewModel.calendars(engCalendars);
                 ko.applyBindings(myViewModel);
                 $( ".photopopup" ).on({
                     popupbeforeposition: function() {
@@ -23,33 +23,37 @@
                 });   
             });
             var currentIndex;
-            function go(index) {
-                currentIndex = index;
+            var currentYear;
+            var currentPages;
+            function go(year, pages) {
+                currentIndex = 0;
+                currentYear=year;
+                currentPages=pages;
                 document.getElementById("previous").style.display = "block";
                 document.getElementById("next").style.display = "block";
                 if (currentIndex==0) document.getElementById("previous").style.display = "none";
-                if (currentIndex==myViewModel.manuals().length-1) document.getElementById("next").style.display = "none";
-                document.getElementById("manualImage").src = "./images/" + myViewModel.manuals()[index].image;
-                $( "#popManual" ).popup();    
-                $( "#popManual" ).popup({ history: false });            
-                $( "#popManual" ).popup({ positionTo: "window" });
-                $( "#popManual" ).popup({ transition: "flip" });
-                $( "#popManual" ).popup("open");
+                if (currentIndex==currentPages-1) document.getElementById("next").style.display = "none";
+                document.getElementById("calendarImage").src = "./calendars/" + currentYear + "/" + currentYear+ "-" + currentIndex + ".jpg";
+                $( "#popCalendar" ).popup();    
+                $( "#popCalendar" ).popup({ history: false });            
+                $( "#popCalendar" ).popup({ positionTo: "window" });
+                $( "#popCalendar" ).popup({ transition: "flip" });
+                $( "#popCalendar" ).popup("open");
             }
             function previous() {
                 if (currentIndex==0) return;
                 currentIndex--;
                 if (currentIndex==0) document.getElementById("previous").style.display = "none";
                 document.getElementById("next").style.display = "block";
-                document.getElementById("manualImage").src = "./images/" + myViewModel.manuals()[currentIndex].image;
+                document.getElementById("calendarImage").src = "./calendars/" + currentYear + "/" + currentYear+ "-" + currentIndex + ".jpg";
                 $( "#popManual" ).popup("reposition", {"positionTo":"window"});
             }
             function next() {
-                if (currentIndex==myViewModel.manuals().length-1) return;
+                if (currentIndex==currentPages-1) return;
                 currentIndex++;
-                if (currentIndex==myViewModel.manuals().length-1) document.getElementById("next").style.display = "none";
+                if (currentIndex==currentPages-1) document.getElementById("next").style.display = "none";
                 document.getElementById("previous").style.display = "block";
-                document.getElementById("manualImage").src = "./images/" + myViewModel.manuals()[currentIndex].image;
+                document.getElementById("calendarImage").src = "./calendars/" + currentYear + "/" + currentYear + "-" + currentIndex + ".jpg";
                 $( "#popManual" ).popup("reposition", {"positionTo":"window"});
             }
         </script>
@@ -59,50 +63,43 @@
             <div data-role="header" data-position="fixed">
                 <div class="ui-bar ui-bar-b">
                     <img src="./images/logo.png" class="logo">
-                    <span class="my-title">Los Manuales de Bultaco</span>
+                    <span class="my-title">Los Calendarios de Bultaco</span>
                     <a href="#nav-panel" data-icon="bars" class="ui-btn-right ui-link ui-btn ui-icon-bars ui-shadow ui-corner-all" data-role="button" role="button">Buscar</a>
                 </div>                
             </div>
             <div role="main" class="ui-content">
-                <ul id="manual_list" data-role="listview" data-inset="true" data-filter="true" data-input="#filterable-input">
-                    <!-- ko foreach: manuals -->
+                <ul id="calendar_list" data-role="listview" data-inset="true" data-filter="true" data-input="#filterable-input">
+                    <!-- ko foreach: calendars -->
                         <li>
-                            <a data-bind="click: function(){go($index());}" >
-                                <img data-bind="attr:{src:'./images/' + image}" class="ui-li-thumb">
-                                <h2 data-bind='text:name'></h2>
+                            <a data-bind="click: function(){go(year, pages);}" >
+                                <img data-bind="attr:{src:'./calendars/' + year + '/' + year + '-0.jpg'}" class="ui-li-thumb">
+                                <h2 data-bind='text:year'></h2>
                                 <p>
-                                    <span data-bind='text:article'></span><br>
-                                    <span>cc: </span><span data-bind='text:cc'></span><br>
-                                    <span data-bind='text:edition'></span><span data-bind='text:", " + date'></span>
                                 </p>
                                 <p class="ui-li-aside">
-                                    <span data-bind='text:model'></span>
-                                    <!-- ko if: $data.condition && $data.condition=="replace" -->
-                                    <span style="color:red"><b>!</b></span>
-                                    <!-- /ko -->
+                                    <span data-bind='text:($index() + 1)'></span>
                                 </p>
                             </a>
                         </li>
                     <!-- /ko -->
                 </ul>
             </div>
-            <div data-role="popup" id="popManual" class="photopopup">
-                <a href="#" data-bind="click:function(){$( '#popManual' ).popup( 'close' );}" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-                <img id="manualImage">
+            <div data-role="popup" id="popCalendar" class="photopopup">
+                <a href="#" data-bind="click:function(){$( '#popCalendar' ).popup( 'close' );}" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <img id="calendarImage">
                 <img id="previous" style="position:absolute; top:50%; width:3em; height:3em; opacity:.8;" onclick="javascript:previous();" src="./images/previous.png">
                 <img id="next" style="position:absolute; top:50%; right:0%; width:3em; height:3em; opacity:.8;" onclick="javascript:next();" src="./images/next.png">
             </div>
             <div data-role="panel" data-display="overlay" data-position="right" id="nav-panel">
                 <h2>Buscar</h2>
                 <input type="text" data-type="search" id="filterable-input" data-theme="a">
-                <p>¡Atención! Estoy interesado en los manuales que no estén en esta lista. Le agradecería se pusiera en contacto conmigo, para compartir la información. </p>
-                <p>Attention! I'm interested in manuals that are not on this list. I would appreciate it if you would contact me, to share the information.</p>
-                <br>
-                <a href="calendars.html">Los Calendarios</a>
                 <br>
                 <br>
+                <a href="index.html">Los Manuales</a>
                 <br>
-                <center>
+                <br>
+                <br>
+               <center>
                     <span>Pregunta o Comentarios:</span><br>
                     <span>Questions or Comments:</span><br>
                     <a href="mailto:rwbook@columbus.rr.com">Robert Book</a><br><br><br>
