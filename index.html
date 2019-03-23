@@ -52,6 +52,9 @@
                 document.getElementById("manualImage").src = "./images/" + myViewModel.manuals()[currentIndex].image;
                 $( "#popManual" ).popup("reposition", {"positionTo":"window"});
             }
+            function goCalendar() {
+                window.location = "https://bultacomanuals.github.io/calendar.html"
+            }
         </script>
     </head>
     <body>
@@ -98,7 +101,7 @@
                 <p>¡Atención! Estoy interesado en los manuales que no estén en esta lista. Le agradecería se pusiera en contacto conmigo, para compartir la información. </p>
                 <p>Attention! I'm interested in manuals that are not on this list. I would appreciate it if you would contact me, to share the information.</p>
                 <br>
-                <a href="https://bultacomanuals.github.io/calendars.html">Los Calendarios</a>
+                <a href="#" data-bind="click:goCalendar">Los Calendarios</a>
                 <br>
                 <br>
                 <br>
