@@ -1,0 +1,22 @@
+var engCalendars = [
+{"year":"1961",  "pages":"10"},
+{"year":"1962",  "pages":"1"},
+{"year":"1963",  "pages":"13"},
+{"year":"1964",  "pages":"14"},
+{"year":"1965",  "pages":"13"},
+{"year":"1966",  "pages":"14"},
+{"year":"1967",  "pages":"7"},
+{"year":"1968",  "pages":"13"},
+{"year":"1969",  "pages":"10"},
+{"year":"1970",  "pages":"13"},
+{"year":"1971",  "pages":"13"},
+{"year":"1972",  "pages":"13"},
+{"year":"1973",  "pages":"13"},
+{"year":"1974",  "pages":"13"},
+{"year":"1975",  "pages":"13"},
+{"year":"1976",  "pages":"13"},
+{"year":"1977",  "pages":"13"},
+{"year":"1978",  "pages":"13"},
+{"year":"1979",  "pages":"7"},
+{"year":"1980",  "pages":"1"}
+];
