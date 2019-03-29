@@ -79,6 +79,9 @@
                                     <span data-bind='text:edition'></span><span data-bind='text:", " + date'></span>
                                 </p>
                                 <p class="ui-li-aside">
+                                    <!-- ko if: $data.new -->
+                                    <span style="color:red"><b>NEW </b></span>
+                                    <!-- /ko -->
                                     <span data-bind='text:model'></span>
                                     <!-- ko if: $data.condition && $data.condition=="replace" -->
                                     <span style="color:red"><b>!</b></span>
