@@ -17,7 +17,7 @@ var engManuals = [
 {"model":"11", "name":"Pursang/Metisse", "cc":"250", "article":"Rickman Brothers LTD", "edition":"Primera", "date":"1965", "image":"11.jpg"},
 {"model":"12", "name":"Saturno", "cc":"200", "article":"12.30-027", "edition":"Primera", "date":"Junio 1965", "image":"12.jpg"},
 {"model":"16", "name":"Matador MK2", "cc":"250", "article":"16.30-027/I", "edition":"Primera", "date":"Noviembre 1966", "image":"16.jpg"},
-{"model":"18/50", "name":"El Bandido", "cc":"360/350", "article":"18.30-027/I", "edition":"Primera", "date":"Marzo 1968", "image":"18.jpg", "condition":"replace"},
+{"model":"18/50", "name":"El Bandido", "cc":"360/350", "article":"18.30-027/I", "edition":"Primera", "date":"Marzo 1968", "image":"18.jpg"},
 {"model":"19", "name":"Lobito", "cc":"100", "article":"19.30-027/I", "edition":"Primera", "date":"Agosto 1966", "image":"19.jpg"},
 {"model":"20", "name":"Junior", "cc":"75", "article":"20.30-027/E", "edition":"Primera", "date":"Abril 1966", "image":"20.jpg"},
 {"model":"22", "name":"Mercurio", "cc":"155", "article":"22.30-027-2/E", "edition":"Octava", "date":"Junio 1973", "image":"22.jpg"},
