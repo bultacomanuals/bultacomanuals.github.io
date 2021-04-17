@@ -46,7 +46,7 @@
                 if (currentIndex==0) document.getElementById("previous").style.display = "none";
                 document.getElementById("next").style.display = "block";
                 document.getElementById("calendarImage").src = "./calendars/" + currentYear + "/" + currentYear+ "-" + currentIndex + ".jpg";
-                $( "#popManual" ).popup("reposition", {"positionTo":"window"});
+                $( "#popCalendar" ).popup("reposition", {"positionTo":"window"});
             }
             function next() {
                 if (currentIndex==currentPages-1) return;
@@ -54,7 +54,7 @@
                 if (currentIndex==currentPages-1) document.getElementById("next").style.display = "none";
                 document.getElementById("previous").style.display = "block";
                 document.getElementById("calendarImage").src = "./calendars/" + currentYear + "/" + currentYear + "-" + currentIndex + ".jpg";
-                $( "#popManual" ).popup("reposition", {"positionTo":"window"});
+                $( "#popCalendar" ).popup("reposition", {"positionTo":"window"});
             }
             function goIndex() {
                 window.location = "https://bultacomanuals.github.io/index.html"
