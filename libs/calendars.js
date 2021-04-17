@@ -1,6 +1,6 @@
 var engCalendars = [
 {"year":"1961",  "pages":"10"},
-{"year":"1962",  "pages":"1"},
+{"year":"1962",  "pages":"5"},
 {"year":"1963",  "pages":"13"},
 {"year":"1964",  "pages":"14"},
 {"year":"1965",  "pages":"13"},
