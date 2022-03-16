@@ -60,7 +60,7 @@ var engManuals = [
 {"model":"70", "name":"El Montadero", "cc":"360", "article":"70.30-027/I", "edition":"Segunda", "date":"Noviembre 1970", "image":"70.jpg"},
 {"model":"74/76", "name":"Lobito MK4", "cc":"125/175", "article":"74.30-027/I", "edition":"Primera", "date":"Septiembre 1970", "image":"74.jpg"},
 {"model":"74/76", "name":"Lobito MK4", "cc":"125/175", "article":"74.30-027/I", "edition":"Segunda", "date":"Diciembre 1970", "image":"74a.jpg"},
-{"model":"75", "name":"Matador MK3", "cc":"250", "article":"75.30-027/I", "edition":"Segunda", "date":"Marzo 1971", "image":"75.jpg"},
+{"model":"75", "name":"Matador MK4", "cc":"250", "article":"75.30-027/I", "edition":"Segunda", "date":"Marzo 1971", "image":"75.jpg"},
 {"model":"77", "name":"Lobito MK4", "cc":"175", "article":"77.30-027/E", "edition":"Primera", "date":"Diciembre 1970", "image":"77.jpg"},
 {"model":"78", "name":"Sherpa S", "cc":"100", "article":"78.30-027/I", "edition":"Primera", "date":"Octubre 1970", "image":"78.jpg"},
 {"model":"79", "name":"Campera", "cc":"175", "article":"79.30-027/E", "edition":"Cuarta", "date":"Febrero 1976", "image":"79.jpg"},
