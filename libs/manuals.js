@@ -33,7 +33,7 @@ var engManuals = [
 {"model":"27", "name":"Sherpa T", "cc":"250", "article":"27.30-027/I", "edition":"Primera", "date":"Septiembre 1967", "image":"27.jpg"},
 {"model":"28", "name":"Campera", "cc":"175", "article":"28.30-027-1/I", "edition":"Segunda", "date":"Octubre 1969", "image":"28.jpg"},
 {"model":"29/40/41", "name":"TSS", "cc":"350/125/250", "article":"29.30-027-/I", "edition":"Primera", "date":"Julio 1969", "image":"29.jpg"},
-{"model":"30", "name":"Sherpa S", "cc":"100", "article":"30.30-027/I", "edition":"Primera", "date":"Febrero 1970", "image":"30.jpg", "condition":"replace"},
+{"model":"30", "name":"Sherpa S", "cc":"100", "article":"30.30-027/I", "edition":"Primera", "date":"Febrero 1970", "image":"30.jpg"},
 {"model":"33/39", "name":"Junior", "cc":"100/125", "article":"33.30-027-A/E", "edition":"Primera", "date":"Octubre 1967", "image":"33.jpg"},
 {"model":"34", "name":"Senior", "cc":"175/200", "article":"34.30-027/E", "edition":"Segunda", "date":"Octubre 1967", "image":"34.jpg", "condition":"replace"},
 {"model":"35", "name":"Mercurio", "cc":"200", "article":"35.30-027/I", "edition":"Primera", "date":"Noviembre 1967", "image":"35.jpg"},
